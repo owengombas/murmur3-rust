@@ -20,6 +20,14 @@ fn fmix64(h: u64) -> u64 {
     h
 }
 
+/// Hash key into one unsigned 32 bits value
+/// 
+/// # Example
+/// ```
+/// use murmur3_rust::{murmur3_x86_32};
+/// let data = [1, 2, 3];
+/// println!("{}", murmur3_x86_32(&data, 0));
+/// ```
 pub fn murmur3_x86_32(key: &[u8], seed: u32) -> u32 {
     const DATA_SIZE: usize = 4;
     const C1: u32 = 0xcc9e2d51;
@@ -63,6 +71,14 @@ pub fn murmur3_x86_32(key: &[u8], seed: u32) -> u32 {
     h1
 }
 
+/// Hash key into four unsigned 32 bits blocks
+/// 
+/// # Example
+/// ```
+/// use murmur3_rust::{murmur3_x86_128};
+/// let data = [1, 2, 3];
+/// println!("{:?}", murmur3_x86_128(&data, 0));
+/// ```
 pub fn murmur3_x86_128(key: &[u8], seed: u32) -> [u32; 4] {
     const DATA_SIZE: usize = 16;
     const C1: u32 = 0x239b961b;
@@ -211,6 +227,14 @@ pub fn murmur3_x86_128(key: &[u8], seed: u32) -> [u32; 4] {
     [h1, h2, h3, h4]
 }
 
+/// Hash key into two unsigned 64 bits blocks
+/// 
+/// # Example
+/// ```
+/// use murmur3_rust::{murmur3_x64_128};
+/// let data = [1, 2, 3];
+/// println!("{:?}", murmur3_x64_128(&data, 0));
+/// ```
 pub fn murmur3_x64_128(key: &[u8], seed: u32) -> [u64; 2] {
     const DATA_SIZE: usize = 16;
     const C1: u64 = 0x87c37b91114253d5;
