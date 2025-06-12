@@ -16,5 +16,5 @@ exclude = [
     "target",
 ]
 
-[dependencies]
+[dev-dependencies]
 murmur3-binding = { path = "./murmur3-binding" } 
