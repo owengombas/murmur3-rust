@@ -6,6 +6,9 @@ homepage = "https://github.com/owengombas/murmurs"
 version = "1.0.0"
 edition = "2024"
 readme = "README.md"
+license = "MIT"
+keywords = ["murmur3", "murmur", "hash", "hashing", "ffi"]
+authors = ["Owen Gombas"]
 
 [dependencies]
 murmur3-binding = { path = "./murmur3-binding" } 
