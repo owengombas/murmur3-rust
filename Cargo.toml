@@ -9,6 +9,12 @@ readme = "README.md"
 license = "MIT"
 keywords = ["murmur3", "murmur", "hash", "hashing", "ffi"]
 authors = ["Owen Gombas"]
+exclude = [
+    "murmur3-binding",
+    ".github",
+    "tests",
+    "target",
+]
 
 [dependencies]
 murmur3-binding = { path = "./murmur3-binding" } 
