@@ -53,7 +53,7 @@ mod tests {
     #[test]
     fn hash_equal_x64_128() {
         run_hash_test(
-            |text, seed| murmur3_rust::murmur3_x64_128(text, seed),
+            |text, seed| murmurs::murmur3_x64_128(text, seed),
             |text, seed| murmur3_binding::murmur3_x64_128(text, seed),
         );
     }
@@ -61,7 +61,7 @@ mod tests {
     #[test]
     fn hash_equal_x86_128() {
         run_hash_test(
-            |text, seed| murmur3_rust::murmur3_x86_128(text, seed),
+            |text, seed| murmurs::murmur3_x86_128(text, seed),
             |text, seed| murmur3_binding::murmur3_x86_128(text, seed),
         );
     }
@@ -69,7 +69,7 @@ mod tests {
     #[test]
     fn hash_equal_x86_32() {
         run_hash_test(
-            |text, seed| murmur3_rust::murmur3_x86_32(text, seed),
+            |text, seed| murmurs::murmur3_x86_32(text, seed),
             |text, seed| murmur3_binding::murmur3_x86_32(text, seed),
         );
     }

@@ -1,4 +1,4 @@
-use murmur3_rust::{murmur3_x86_32, murmur3_x86_128, murmur3_x64_128};
+use murmurs::*;
 
 fn main() {
     let data = [1, 2, 3];

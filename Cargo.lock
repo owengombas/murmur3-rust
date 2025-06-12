@@ -136,8 +136,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "murmur3-rust"
-version = "0.1.0"
+name = "murmurs"
+version = "1.0.0"
 dependencies = [
  "murmur3-binding",
 ]
