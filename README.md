@@ -1,4 +1,4 @@
-# 🌀 Murmurs: A Reliable Murmur3 Hash in Rust
+# 🫆 Murmurs: A Reliable Murmur3 Hash in Rust
 This crate provides a **reliable and production-ready implementation** of the [Murmur3 hash function](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp), faithfully translated from the original C++ reference and usable in the same way.
 
 The core logic resides in [`src/murmur3.rs`](src/murmur3.rs), and its correctness is verified against the latest version of the [official smhasher implementation](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp) through tests using C FFI bindings.

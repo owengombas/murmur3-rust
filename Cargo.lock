@@ -137,7 +137,7 @@ dependencies = [
 
 [[package]]
 name = "murmurs"
-version = "1.0.2"
+version = "1.0.3"
 dependencies = [
  "murmur3-binding",
 ]
