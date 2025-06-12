@@ -1,8 +1,7 @@
 # 🌀 Murmurs: A Reliable Murmur3 Hash in Rust
+This crate provides a **reliable and production-ready implementation** of the [Murmur3 hash function](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp), faithfully translated from the original C++ reference and usable in the same way.
 
-This crate provides a **reliable and production-ready implementation** of the [Murmur3 hash function](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp), based directly on the reference C++ implementation.
-
-The core logic is in [`src/murmur3.rs`](src/murmur3.rs), and it's tested against the original via C bindings.
+The core logic resides in [`src/murmur3.rs`](src/murmur3.rs), and its correctness is verified against the latest version of the [official smhasher implementation](https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp) through tests using C FFI bindings.
 
 ## 📦 Installation
 Add the following to your `Cargo.toml`:
@@ -36,7 +35,8 @@ cargo test
 ```
 
 ## 🔒 Status
-- ✅ Verified against the original MurmurHash3.cpp
+- ✅ Verified against the original `MurmurHash3.cpp`
 - ✅ Consistent 32-bit and 128-bit output
 - ✅ Portable and deterministic
+- ✅ Can be used the same way as the C++ reference
  
