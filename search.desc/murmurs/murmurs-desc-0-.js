@@ -1,0 +1,1 @@
+searchState.loadedDescShard("murmurs", 0, "Hash key into two unsigned 64 bits blocks\nHash key into four unsigned 32 bits blocks\nHash key into one unsigned 32 bits value")

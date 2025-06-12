@@ -1,0 +1,4 @@
+var searchIndex = new Map(JSON.parse('[["murmurs",{"t":"HHH","n":["murmur3_x64_128","murmur3_x86_128","murmur3_x86_32"],"q":[[0,"murmurs"],[3,"murmurs::murmur3"]],"i":"```","f":"{{{f{{d{b}}}}h}{{l{j}}}}{{{f{{d{b}}}}h}{{l{h}}}}{{{f{{d{b}}}}h}h}","D":"f","p":[[1,"u8"],[1,"slice"],[1,"reference",null,null,1],[1,"u32"],[1,"u64"],[1,"array"]],"r":[[0,3],[1,3],[2,3]],"b":[],"c":"OjAAAAAAAAA=","e":"OjAAAAEAAAAAAAAAEAAAAAAA","P":[]}]]'));
+if (typeof exports !== 'undefined') exports.searchIndex = searchIndex;
+else if (window.initSearch) window.initSearch(searchIndex);
+//{"start":39,"fragment_lengths":[390]}
