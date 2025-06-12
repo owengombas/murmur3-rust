@@ -9,7 +9,7 @@ Add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-murmurs = "1.0.0" # or the latest published version
+murmurs = "1.0" # or the latest published version
 ```
 
 ## 🚀 Usage
