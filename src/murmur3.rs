@@ -1,5 +1,25 @@
 use std::usize;
 
+#[cfg(target_endian = "little")]
+fn read_data_32(data: &[u8], start: usize, length: usize) -> u32 {
+    u32::from_le_bytes(data[start..start + length].try_into().unwrap())
+}
+
+#[cfg(target_endian = "little")]
+fn read_data_64(data: &[u8], start: usize, length: usize) -> u64 {
+    u64::from_le_bytes(data[start..start + length].try_into().unwrap())
+}
+
+#[cfg(target_endian = "big")]
+fn read_data_32(data: &[u8], start: usize, length: usize) -> u64 {
+    u64::from_be_bytes(data[start..start + length].try_into().unwrap())
+}
+
+#[cfg(target_endian = "big")]
+fn read_data_64(data: &[u8], start: usize, length: usize) -> u64 {
+    u64::from_be_bytes(data[start..start + length].try_into().unwrap())
+}
+
 fn fmix32(h: u32) -> u32 {
     let mut h = h;
     h ^= h >> 16;
@@ -40,7 +60,7 @@ pub fn murmur3_x86_32(key: &[u8], seed: u32) -> u32 {
 
     for i in 0..n_blocks {
         let base = i.wrapping_mul(DATA_SIZE);
-        let mut k1 = u32::from_le_bytes(key[base..base + DATA_SIZE].try_into().unwrap());
+        let mut k1 = read_data_32(key, base, DATA_SIZE);
 
         k1 = k1.wrapping_mul(C1).rotate_left(15).wrapping_mul(C2);
 
@@ -96,10 +116,10 @@ pub fn murmur3_x86_128(key: &[u8], seed: u32) -> [u32; 4] {
 
     for i in 0..n_blocks {
         let base = i.wrapping_mul(DATA_SIZE);
-        let mut k1 = u32::from_le_bytes(key[base..base + 4].try_into().unwrap());
-        let mut k2 = u32::from_le_bytes(key[base + 4..base + 8].try_into().unwrap());
-        let mut k3 = u32::from_le_bytes(key[base + 8..base + 12].try_into().unwrap());
-        let mut k4 = u32::from_le_bytes(key[base + 12..base + 16].try_into().unwrap());
+        let mut k1 = read_data_32(key, base, 4);
+        let mut k2 = read_data_32(key, base + 4, 4);
+        let mut k3 = read_data_32(key, base + 8, 4);
+        let mut k4 = read_data_32(key, base + 12, 4);
 
         k1 = k1.wrapping_mul(C1).rotate_left(15).wrapping_mul(C2);
         h1 ^= k1;
@@ -248,8 +268,8 @@ pub fn murmur3_x64_128(key: &[u8], seed: u32) -> [u64; 2] {
 
     for i in 0..n_blocks {
         let base = i.wrapping_mul(DATA_SIZE);
-        let mut k1 = u64::from_le_bytes(key[base..base + 8].try_into().unwrap());
-        let mut k2 = u64::from_le_bytes(key[base + 8..base + 16].try_into().unwrap());
+        let mut k1 = read_data_64(key, base, 8);
+        let mut k2 = read_data_64(key, base+8, 8);
 
         k1 = k1.wrapping_mul(C1).rotate_left(31).wrapping_mul(C2);
         h1 ^= k1;
